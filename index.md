@@ -1,0 +1,53 @@
+---
+title       : StokIt
+author      : Jing Chen
+job         : 
+framework   : RevealJS        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Learn and Trade Stocks with Interactive Tools
+StokIt
+
+--- .class 1 
+
+## StokIt is the tool to 
+
+1. Study technical analysis techniques interactively
+2. Predict and Forcast the stock trend with different models(to be implemented)
+
+--- .class 2 
+
+### See demo on [Rstudio's Shiny Server](https://rkelly.shinyapps.io/stock)
+
+### The codes can be accessed at [Github](https://github.com/gzch2002/shiny)
+
+### The technique used for implementation
+1. R with quantmod package
+2. Shiny
+
+--- .class 3 
+**Code to read stock data from yahoo.com and draw the chart**
+
+```r
+library(quantmod)
+stock <- getSymbols("AAPL", src = "yahoo", auto.assign = FALSE)
+chartSeries(stock, TA = "addMACD()")
+```
+
+![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1-1.png) 
+
+
+--- .class 4 
+## To Be Implemented
+1. Models for forecasting and predicting
+2. Error control
+3. More interactions
+
+--- .class 5
+
+
